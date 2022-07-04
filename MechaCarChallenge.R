@@ -10,12 +10,12 @@ lm(mpg~vehicle_length+vehicle_weight+spoiler_angle+ground_clearance+AWD, data = 
 summary(lm(mpg~vehicle_length+vehicle_weight+spoiler_angle+ground_clearance+AWD, data = MechaCar_df))
 
 # Create Visualizations for the Trip Analysis
-# read csv to dataframe
+# In your MechaCarChallenge.RScript, import and read in the Suspension_Coil.csv file as a table
 suspension_df <- read.csv(file = './Resources/Suspension_Coil.csv', check.names = F, stringsAsFactors = F)
 head(suspension_df)
-# create a summary dataframe
+# Write an RScript that creates a total_summary dataframe using the summarize() function
 total_summary <- suspension_df %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
-# create summaries for each lot
+# Write an RScript that creates a lot_summary dataframe using the group_by() and the summarize() functions to group each manufacturing lot
 lot_summary <- suspension_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
 
 #T-Tests on Suspension Coils
